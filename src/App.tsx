@@ -1,56 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useDispatch } from "react-redux";
+import { Products } from "./Interfaces/Products";
+import {
+  useAddProductMutation,
+  useGetProductsQuery,
+} from "./Services/Products";
+import { setProduct } from "./Services/Products/slice";
+import { useTypedSelector } from "./store";
+
+const ProductsList = ({ products }: { products: Products[] }) => {
+  const dispatch = useDispatch();
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>description</th>
+          <th>price</th>
+          <th>category_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        {products.map((product, key) => (
+          <tr key={key} onClick={() => dispatch(setProduct(product))}>
+            <td>{product.id}</td>
+            <td>{product.name}</td>
+            <td>{product.description}</td>
+            <td>{product.price}</td>
+            <td>{product.category_id}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 function App() {
+  const { data, error, isLoading } = useGetProductsQuery();
+  const [addProduct, { isLoading: isAdding }] = useAddProductMutation();
+  const product = useTypedSelector((state) => state.productsSlice.product);
+
+  const createProductHandle = () => {
+    addProduct({
+      id: Math.floor(Math.random() * 1000000),
+      name: "Test",
+      description: "Description",
+      price: 33,
+      category_id: 3,
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <ProductsList products={data} />
+      ) : null}
+
+      <button onClick={() => createProductHandle()}>Create new Product</button>
+      {isAdding && <div>Adding...</div>}
+
+      {JSON.stringify(product)}
     </div>
   );
 }

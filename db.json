@@ -1,0 +1,145 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Hambúrguer",
+      "description": "Pão, bife de hambúrguer 90g, salada e batata.",
+      "price": 8.5,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "name": "X-Búrguer",
+      "description": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, salada e batata.",
+      "price": 10.5,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "name": "X-Bacon",
+      "description": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, 2 fatia de bacon, salada e batata.",
+      "price": 12.5,
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "name": "X-Tudo",
+      "description": "Pão, 2 bifes de hambúrguer 90g, 2 fatias de queijo, 4 fatias de bacon, salada e batata.",
+      "price": 14.5,
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "name": "Coca cola 350ml",
+      "description": "",
+      "price": 5.5,
+      "category_id": 2
+    },
+    {
+      "id": 6,
+      "name": "Coca cola 600ml",
+      "description": "",
+      "price": 7.5,
+      "category_id": 2
+    },
+    {
+      "id": 133,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3,
+      "id": 134
+    },
+    {
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3,
+      "id": 135
+    },
+    {
+      "id": 391560,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 105615,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 817493,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 918059,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 470004,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 825368,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 45436,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 189986,
+      "name": "Test",
+      "description": "Description",
+      "price": 33,
+      "category_id": 3
+    },
+    {
+      "id": 918060
+    },
+    {
+      "id": 918061
+    },
+    {
+      "id": 918062
+    },
+    {
+      "id": 918063
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hambúrgueres"
+    },
+    {
+      "id": 2,
+      "name": "Refrigerantes"
+    }
+  ]
+}
